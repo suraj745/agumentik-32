@@ -1,0 +1,27 @@
+@import "../../styles/function";
+
+#cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 2rem;
+
+  @include media("<=phone") {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  & > :nth-child(1) {
+    background-color: rgb(216, 216, 216);
+    color: black;
+  }
+
+  & > :nth-child(2) {
+    background-color: black;
+    color: white;
+  }
+}
+
+#faq_cards {
+  @include flex(center, center);
+  flex-direction: column;
+}

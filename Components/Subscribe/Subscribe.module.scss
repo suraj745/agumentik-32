@@ -1,0 +1,53 @@
+@import "../../styles/function";
+.sub_container {
+  background-color: $main-color;
+  min-height: 20vh;
+  position: absolute;
+  width: 80%;
+  @include flex(space-between, center);
+  top: -8rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  @include media("<=laptop") {
+    flex-direction: column;
+    text-align: center;
+    position: initial;
+    width: 100%;
+    border-radius: 0rem;
+    top: 0rem;
+  }
+  .left_content {
+    h1 {
+      text-transform: uppercase;
+      color: white;
+      font-size: clamp(2rem, 2vw, 4rem);
+    }
+
+    p {
+      text-transform: capitalize;
+      color: white;
+    }
+  }
+  .right_content {
+    @include flex(center, center);
+
+    input,
+    button {
+      background: none;
+      border: none;
+      padding: 1rem;
+      outline: none;
+    }
+    input {
+      width: 30rem;
+      background-color: black;
+      color: white;
+    }
+
+    button {
+      width: 5rem;
+      background-color: white;
+      color: black;
+    }
+  }
+}

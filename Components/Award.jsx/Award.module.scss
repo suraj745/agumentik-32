@@ -1,0 +1,10 @@
+@import "../../styles/function";
+#brand_slider {
+  #brand_slide {
+    @include flex(center, center);
+    img {
+      width: 10rem;
+      object-fit: cover;
+    }
+  }
+}

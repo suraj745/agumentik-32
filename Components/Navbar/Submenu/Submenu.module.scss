@@ -1,0 +1,12 @@
+@import "../../../styles/function";
+
+.submenu_container {
+  position: absolute;
+  background-color: white;
+  left: -100%;
+  width: 100%;
+  top: 0;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, #091e4214 0px 0px 0px 1px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, #091e4214 0px 0px 0px 1px;
+  z-index: -1;
+}

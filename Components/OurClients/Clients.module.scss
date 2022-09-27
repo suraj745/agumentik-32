@@ -1,0 +1,8 @@
+@import "../../styles/function";
+#brandswiper_container {
+  #right {
+    & > :nth-child(1) {
+      background-color: green;
+    }
+  }
+}

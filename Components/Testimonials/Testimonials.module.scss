@@ -1,0 +1,11 @@
+@import "../../styles/function";
+
+.testiomonial_container {
+  .card_holder {
+    @include flex(center, center);
+  }
+  .test_swiper {
+    min-height: 40rem;
+    @include flex(center, center);
+  }
+}

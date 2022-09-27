@@ -1,0 +1,28 @@
+@import "../../styles/function";
+.company_card {
+  background-color: white;
+  padding: 5rem;
+  z-index: 5;
+  position: relative;
+
+  right: calc(10% - 2rem);
+  top: 0;
+
+  @include media("<=laptop") {
+    right: 0rem;
+  }
+
+  li {
+    margin-top: 1rem;
+  }
+  .heading {
+    h1 {
+      font-size: 3rem;
+      span {
+        font-weight: 200;
+      }
+    }
+  }
+
+  @include default;
+}

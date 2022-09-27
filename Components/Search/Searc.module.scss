@@ -1,0 +1,49 @@
+@import "../../styles/function";
+
+#search_container {
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.89);
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9000;
+  @include flex(center, center);
+
+  ul {
+    height: 90vh;
+
+    & > :nth-child(1) {
+      text-align: right;
+    }
+
+    & > :nth-child(2) {
+      height: 100%;
+      @include flex(center, center);
+
+      input,
+      button {
+        border: none;
+        outline: none;
+        background: none;
+        border: 0.1rem solid black;
+      }
+
+      button {
+        padding: clamp(1rem, 2vw, 3rem);
+      }
+      input {
+        padding: clamp(1rem, 2vw, 3rem);
+
+        width: 75vw;
+        &::placeholder {
+          font-size: clamp(1.7rem, 4vw, 5rem);
+        }
+      }
+    }
+  }
+}
+
+.cross {
+  font-size: clamp(2rem, 3vw, 6rem);
+}

@@ -1,0 +1,74 @@
+@import "../../styles/function";
+
+.latest_card_container {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  .image {
+    position: relative;
+    .tag {
+      background-color: $main-color;
+      position: absolute;
+      top: 0;
+      padding: 2rem;
+      right: 0;
+      color: white;
+      @include flex(center, center);
+      flex-direction: column;
+      text-transform: uppercase;
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .status {
+    @include flex(space-between, center);
+
+    section {
+      @include flex(center, center);
+      gap: 1rem;
+    }
+    span {
+      text-transform: capitalize;
+    }
+  }
+
+  .content {
+    li {
+      margin-top: 1rem;
+    }
+    padding: 2rem;
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 1.9rem);
+    }
+
+    .last {
+      @include flex(space-between, center);
+      .readmore {
+        .arrow {
+          animation-name: arrow;
+          animation-iteration-count: infinite;
+          animation-duration: 1s;
+        }
+        @keyframes arrow {
+          0% {
+            transform: translateX(2rem);
+          }
+          50% {
+            transform: translateX(1rem);
+          }
+          100% {
+            transform: translateX(2rem);
+          }
+        }
+      }
+
+      .social {
+        @include flex(center, center);
+        gap: 1rem;
+      }
+    }
+  }
+}

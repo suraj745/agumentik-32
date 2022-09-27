@@ -11,11 +11,121 @@
 html {
   font-size: 62.5%;
   body {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-family: "Poppins", sans-serif;
 
     ul {
       padding: 0;
       list-style: none;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.content_pad {
+  @include padding;
+}
+
+#banner_carousel {
+  .owl-dots {
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    .owl-dot {
+      background-color: rgba(0, 0, 0, 0.532);
+      span {
+        width: clamp(4rem, 6vw, 10rem) !important;
+        height: clamp(4rem, 6vw, 10rem) !important;
+        margin: 5px 7px;
+        background: silver;
+        display: block;
+        transition: opacity 0.2s ease;
+        border-radius: 0rem !important;
+      }
+    }
+
+    .active {
+      span {
+        background-color: rgba(255, 0, 0, 0.427) !important;
+      }
+    }
+  }
+}
+
+#company_container {
+  @include flex(center, center);
+
+  .owl-dots {
+    background-color: black;
+    .owl-dot {
+      span {
+        width: 2rem !important;
+        height: 2rem !important;
+        margin: 5px 7px;
+        background: white;
+        display: block;
+        transition: opacity 0.2s ease;
+        border-radius: 0rem !important;
+      }
+    }
+
+    .active {
+      span {
+        background-color: rgba(255, 0, 0, 0.427) !important;
+      }
+    }
+  }
+}
+
+// .swiper-pagination {
+//   bottom: -4rem !important;
+//   position: relative;
+// }
+#company {
+  .swiper-pagination-bullet {
+    background-color: white !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    border-radius: 0rem !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $main-color !important;
+  }
+}
+
+#test_swiper {
+  .swiper-pagination-bullet {
+    background-color: silver !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    border-radius: 0rem !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $main-color !important;
+  }
+}
+
+.broucher_slider {
+  .swiper-pagination {
+    bottom: 0rem !important;
+    .swiper-pagination-bullet {
+      background-color: silver !important;
+      width: 1.5rem !important;
+      height: 1.5rem !important;
+      border-radius: 0rem !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $main-color !important;
     }
   }
 }

@@ -1,0 +1,92 @@
+@import "../../styles/function";
+
+.contact_container {
+  @include flex(center, center);
+  background-image: linear-gradient(
+      rgba(255, 0, 0, 0.32),
+      rgba(255, 0, 0, 0.32)
+    ),
+    url(/images/background/bg-1.jpg);
+  min-height: 100vh;
+  background-size: contain;
+
+  .contact_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, auto);
+    grid-template-areas: "one two three";
+    gap: 2rem;
+    place-items: center;
+
+    @include media("<=desktop") {
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "two two" "one three";
+
+      @include media("<=tablet") {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "one" "two" "three";
+      }
+    }
+
+    .left_container {
+      grid-area: one;
+      max-width: 36rem;
+      height: 100%;
+      @include topic;
+      background-color: white;
+      padding: 2rem;
+      text-align: left;
+
+      .paragraph {
+        p {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .number {
+      p {
+        font-size: 2rem;
+      }
+    }
+
+    li {
+      margin-top: 2rem;
+    }
+    @include default;
+  }
+
+  .middle_container {
+    grid-area: two;
+    img {
+      height: 100%;
+      max-width: 36rem;
+    }
+  }
+  .right_container {
+    grid-area: three;
+    @include topic;
+    height: 100%;
+    background-color: white;
+    max-width: 36rem;
+    padding: 2rem;
+    .paragraph {
+      p {
+        font-size: 1.6rem;
+      }
+    }
+
+    .buttons {
+      @include flex(flex-start, center);
+      flex-direction: column;
+
+      .default {
+        width: 100%;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

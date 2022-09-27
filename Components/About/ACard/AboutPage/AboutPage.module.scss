@@ -1,0 +1,54 @@
+@import "../../../../styles/function";
+.about_page_container {
+  min-height: 80vh;
+  background-image: url("/dot.png");
+  @include flex(center, center);
+  .about_cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    @include media("<=laptop") {
+      grid-template-columns: repeat(2, 1fr);
+      @include media("<=phone") {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 5rem;
+      }
+    }
+  }
+}
+
+.view_card {
+  @include flex(center, flex-start);
+  flex-direction: column;
+
+  padding: 1rem;
+  @include default;
+  li {
+    margin-top: 1rem;
+  }
+
+  .heading {
+    & :nth-child(1) {
+      font-weight: 200;
+    }
+    h1 {
+      font-size: clamp(3rem, 3vw, 5rem);
+    }
+  }
+}
+
+.main_heading {
+  text-align: center;
+  li {
+    h1 {
+      font-size: clamp(6rem, 4vw, 8rem);
+      text-transform: uppercase;
+      font-weight: 900;
+      color: white;
+      text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.39);
+      span {
+        display: inline-flex;
+      }
+    }
+  }
+}

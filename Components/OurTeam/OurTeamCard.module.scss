@@ -1,0 +1,17 @@
+@import "../../styles/function";
+.card_container {
+  background-color: $main-color;
+  .image {
+    padding: 1rem;
+  }
+
+  max-width: 30rem;
+
+  .content {
+    padding: 1rem;
+    color: white;
+    li {
+      margin-top: 1rem;
+    }
+  }
+}

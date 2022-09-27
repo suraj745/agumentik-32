@@ -1,0 +1,9 @@
+@import "../styles/function";
+#loader_container {
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 999999;
+  @include flex(center, center);
+  background-color: $main-color;
+}

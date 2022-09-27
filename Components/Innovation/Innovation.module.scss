@@ -1,0 +1,88 @@
+@import "../../styles/function";
+
+#innovation_card_container {
+  .image_container {
+    @include flex(flex-start, center);
+    overflow: hidden;
+    img {
+      width: 30rem;
+      border-radius: 1rem;
+    }
+
+    @include media("<=laptop") {
+      flex-direction: column;
+      @include flex(flex-start, center);
+    }
+
+    .design {
+      width: 0.2rem;
+      height: 10rem;
+      background-color: white;
+      position: relative;
+      @include flex(center, center);
+      @include media(">=laptop") {
+        width: 10rem;
+        height: 0.2rem;
+        @include flex(flex-end, center);
+      }
+
+      .circle {
+        position: absolute;
+        width: 4rem;
+        bottom: 0;
+
+        @include media(">=laptop") {
+          bottom: auto;
+        }
+        height: 4rem;
+        border-radius: 100%;
+        background-color: $main-color;
+      }
+    }
+
+    .design2 {
+      width: 0.2rem;
+      height: 10rem;
+      background-color: white;
+      position: relative;
+      justify-self: left;
+      @include flex(center, center);
+      @include media(">=laptop") {
+        width: 10rem;
+        height: 0.2rem;
+        @include flex(flex-end, center);
+      }
+
+      .circle2 {
+        position: absolute;
+        width: 4rem;
+        left: 0;
+
+        @include media("<=laptop") {
+          top: 0;
+          left: auto;
+        }
+        height: 4rem;
+        border-radius: 100%;
+        background-color: $main-color;
+      }
+    }
+  }
+}
+
+.right_content {
+  background-color: $main-color;
+  color: white;
+  padding: clamp(1rem, 2vw, 2rem);
+  border-radius: 1rem;
+
+  .date {
+    h1 {
+      font-size: clamp(3rem, 4vw, 4rem);
+    }
+  }
+
+  .name {
+    font-size: clamp(2.5rem, 3vw, 3rem);
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../styles/function";
+#blog_page_container {
+  min-height: 100vh;
+
+  #top {
+    @include flex(center, center);
+
+    input,
+    button {
+      background: none;
+      outline: none;
+      border: none;
+    }
+    input {
+      padding: 1rem;
+      width: 50%;
+      background-color: rgba(192, 192, 192, 0.457);
+    }
+    button {
+      background-color: black;
+      padding: 1rem;
+      color: white;
+    }
+  }
+
+  #bottom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @include media("<=laptop") {
+      grid-template-columns: repeat(2, 1fr);
+
+      @include media("<=phone") {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}

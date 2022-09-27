@@ -1,0 +1,66 @@
+@import "../../styles/function";
+
+#modal_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.904);
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  left: 0;
+  @include flex(center, center);
+
+  #form_container {
+    @include flex(center, center);
+
+    padding: 1rem;
+    form {
+      border-radius: 1rem;
+
+      @include flex(center, center);
+      padding: 2rem;
+      flex-direction: column;
+      position: relative;
+      background-color: white;
+      font-size: clamp(1.5rem, 3vw, 1.6rem);
+      z-index: 0;
+
+      section {
+        @include flex(space-between, flex-start);
+        width: 100%;
+        margin-top: 1rem;
+
+        a {
+          width: 15rem;
+          text-transform: uppercase;
+        }
+
+        input,
+        textarea {
+          background: none;
+          border: none;
+          padding: 1rem;
+          width: 100%;
+          outline: none;
+          background-color: rgb(201, 200, 200);
+          caret-color: $main-color;
+        }
+
+        textarea {
+          resize: none;
+          height: 12rem;
+        }
+      }
+
+      .buttons {
+        padding: 2rem;
+        @include flex(space-around, center);
+        @include default;
+
+        @include media("<=tablet") {
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

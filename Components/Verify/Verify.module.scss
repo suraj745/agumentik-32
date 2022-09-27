@@ -1,0 +1,33 @@
+@import "../../styles/function";
+
+#verify_container {
+  background-color: black;
+
+  #form_container {
+    @include flex(center, center);
+
+    .form_main_container {
+      width: 50rem;
+
+      li {
+        margin-top: 2rem;
+      }
+
+      @include default;
+      input {
+        background: none;
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 1rem;
+        color: white;
+
+        border-bottom: 0.2rem solid $main-color;
+
+        &::placeholder {
+          color: white;
+        }
+      }
+    }
+  }
+}

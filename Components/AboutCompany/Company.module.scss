@@ -1,0 +1,22 @@
+@import "../../styles/function";
+
+.company_container {
+  background-color: black;
+  min-height: 100vh;
+  @include flex(center, center);
+  .carousel_container {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.mySwiper {
+  position: relative;
+  width: 100%;
+  left: calc(10% - 2rem);
+
+  @include media("<=laptop") {
+    left: 0rem;
+  }
+}

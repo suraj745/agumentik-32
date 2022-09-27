@@ -1,0 +1,53 @@
+@import "../../styles/function";
+
+.mission_container {
+  background-image: url(/bg2.png), url(/bg1.png);
+  background-color: #f6f7f8;
+  background-repeat: no-repeat;
+
+  @include flex(center, center);
+
+  background-position: right;
+  .left_content {
+    max-width: 36rem;
+    min-height: 50rem;
+    @include flex(center, flex-start);
+    padding: 2rem;
+    background-image: url(/card1.png);
+    background-size: cover;
+    background-position: center center;
+    flex-direction: column;
+    background-color: white;
+    @include default;
+
+    li {
+      margin-top: 1rem;
+    }
+    .heading {
+      h1 {
+        font-size: clamp(2.8rem, 3vw, 3rem);
+        & :nth-child(1) {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+.default {
+  @include flex(center, center);
+  flex-direction: column;
+}
+
+.middle_container {
+  img {
+    max-width: 36rem;
+    min-height: 50rem;
+  }
+}
+
+.button_container {
+  @include flex(center, flex-start);
+  flex-direction: column;
+  gap: 2rem;
+}

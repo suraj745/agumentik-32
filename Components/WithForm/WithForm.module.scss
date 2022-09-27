@@ -1,0 +1,34 @@
+@import "../../styles/function";
+
+#withform_container {
+  #top {
+  }
+
+  #bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "one two three";
+    gap: 2rem;
+
+    & > :nth-child(1) {
+      grid-area: one;
+    }
+
+    & > :nth-child(2) {
+      grid-area: two;
+    }
+
+    & > :nth-child(3) {
+      grid-area: three;
+    }
+    @include media("<=laptop") {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "one one" "two three";
+
+      @include media("<=phone") {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "one " "two " "three";
+      }
+    }
+  }
+}

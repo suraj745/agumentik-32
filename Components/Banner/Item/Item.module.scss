@@ -1,0 +1,126 @@
+@import "../../../styles/function";
+#item {
+  .card_container {
+    position: relative;
+    li {
+      margin-top: 1.5rem;
+      line-height: 3rem;
+    }
+    img {
+      filter: blur(0.2rem);
+      height: 100vh;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .card_content {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.678);
+      color: white;
+      @include flex(center, center);
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 4;
+
+      // dropAnimation
+
+      .content {
+        position: relative;
+        .rectanlge {
+          width: 34rem;
+          height: 54rem;
+          border: 2rem solid $main-color;
+          position: absolute;
+          top: -12rem;
+          left: -5rem;
+          z-index: -1;
+
+          @include media("<=desktop") {
+            width: 28rem;
+            height: 48rem;
+
+            @include media("<=laptop") {
+              width: 28rem;
+              height: 48rem;
+
+              @include media("<=tablet") {
+                width: 23rem;
+                height: 35rem;
+                border: 1.5rem solid $main-color;
+                left: -4rem;
+
+                @include media("<=phone") {
+                  width: 22rem;
+                  height: 40rem;
+                  left: 0rem;
+                  border: 1rem solid $main-color;
+                }
+              }
+            }
+          }
+        }
+
+        @include media("<=phone") {
+          padding-left: 4rem;
+        }
+
+        @keyframes reveal {
+          0% {
+            left: 0;
+          }
+
+          100% {
+            left: 100%;
+          }
+        }
+        .heading {
+          position: relative;
+          overflow: hidden;
+          h1 {
+            font-size: clamp(3rem, 5vw, 7.2rem);
+            font-weight: 700;
+            text-transform: uppercase;
+          }
+          &::after {
+            width: 100%;
+            content: "";
+            height: 100%;
+            position: absolute;
+            background-color: white;
+
+            top: 0;
+            animation-name: reveal;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+          }
+        }
+
+        .paragraph {
+          position: relative;
+          overflow: hidden;
+          p {
+            font-size: 2rem;
+            font-weight: 500;
+          }
+
+          &::after {
+            width: 100%;
+            content: "";
+            height: 100%;
+            position: absolute;
+            background-color: white;
+
+            top: 0;
+            animation-name: reveal;
+            animation-duration: 0.6s;
+            animation-fill-mode: forwards;
+          }
+        }
+
+        @include default;
+      }
+    }
+  }
+}

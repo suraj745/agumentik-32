@@ -1,0 +1,19 @@
+@import "../../styles/function";
+
+#cources_container {
+  min-height: 100vh;
+  background-color: black;
+  #bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include media("<=laptop") {
+      grid-template-columns: repeat(2, 1fr);
+
+      @include media("<=phone") {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}

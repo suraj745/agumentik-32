@@ -1,0 +1,52 @@
+@import "../../../styles/function";
+
+.about_card_container {
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+
+  // &:hover .bottom_content .plus_icon {
+  //   transform: translateX(0rem);
+  //   animation-delay: 0.6s;
+  // }
+
+  // &:hover .bottom_content {
+  //   transform: translateY(0rem);
+  // }
+
+  .top_content {
+    img {
+      object-fit: scale-down;
+    }
+  }
+  .bottom_content {
+    padding: 0.2rem;
+    position: absolute;
+    left: 0rem;
+    // transition: all 0.4s ease-in;
+    // transform: translateY(8rem);
+    bottom: 0rem;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+    .about_card_content {
+      display: flex;
+    }
+
+    .left {
+      flex: 1.5;
+    }
+    .plus_icon {
+      position: relative;
+      //   transition: all 0.2s ease-in;
+      //   transition-delay: 0.6s;
+      //   transform: translateX(8rem);
+      right: 0rem;
+      flex: 0.3;
+      background-color: $main-color;
+      font-size: 4rem;
+      color: white;
+      @include flex(center, center);
+    }
+  }
+}

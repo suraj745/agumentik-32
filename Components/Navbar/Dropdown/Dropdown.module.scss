@@ -1,0 +1,33 @@
+@import "../../../styles/function";
+.dropdown_container {
+  background-color: white;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, #091e4214 0px 0px 0px 1px;
+  z-index: 300;
+  animation-name: dropdownAnimate;
+  animation-duration: 2s;
+  li {
+    font-size: 1.5rem;
+    position: relative;
+    text-transform: capitalize;
+    transition: 0.3s;
+    padding: 1rem;
+    gap: 4rem;
+    span {
+      display: inline-block;
+    }
+
+    &:hover {
+      border-left: 1rem solid $main-color;
+      background-color: rgba(192, 192, 192, 0.717);
+    }
+
+    ul {
+      display: none;
+    }
+    &:hover {
+      ul {
+        display: block;
+      }
+    }
+  }
+}

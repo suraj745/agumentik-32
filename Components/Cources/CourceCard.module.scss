@@ -1,0 +1,62 @@
+@import "../../styles/function";
+
+.card_container {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  min-height: 30rem;
+  position: relative;
+
+  .image {
+    width: 100%;
+    font-size: 5rem;
+    text-align: center;
+    background-color: $main-color;
+    color: white;
+  }
+
+  .content {
+    padding: 2rem;
+    text-align: center;
+
+    .heading {
+      h1 {
+        font-size: clamp(2.5rem, 2vw, 3rem);
+        text-transform: uppercase;
+      }
+    }
+
+    li {
+      margin-top: 2rem;
+    }
+
+    .read_more {
+      font-size: 1.7rem;
+      @include flex(center, center);
+      gap: 1rem;
+
+      &:hover {
+        color: $main-color;
+      }
+
+      .arrow {
+        animation-name: arrowAnimation;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+
+        @keyframes arrowAnimation {
+          0% {
+            transform: translateX(1rem);
+          }
+
+          50% {
+            transform: translateX(2rem);
+          }
+          100% {
+            transform: translateX(1rem);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+@import "../../styles/function";
+.navbar_container {
+  z-index: 500;
+  @include flex(center, center);
+  height: 8rem;
+  // logo
+  .navbar_logo {
+    img {
+      width: 17rem;
+    }
+  }
+
+  //  menus
+  .navbar_menus {
+    @include flex(center, center);
+    position: relative;
+    font-weight: 500;
+    font-size: 1.4rem;
+    // gap: clamp(1.8rem, 2vw, 2rem);
+    @include media("<=laptop") {
+      display: none;
+    }
+
+    li {
+      cursor: pointer;
+
+      a {
+        padding: 3rem 1rem;
+      }
+      &:hover .dropdown_main_container {
+        animation-name: dropdownAnimate;
+        transition: 0.6s;
+        transform: translateY(0rem);
+
+        & > ul {
+          display: block;
+        }
+        li {
+          display: block;
+          .icon {
+            transition: 0.2s;
+          }
+          &:hover .icon {
+            transform: rotate(90deg);
+          }
+        }
+        opacity: 1;
+      }
+
+      .dropdown_main_container {
+        width: 22rem;
+        position: absolute;
+        transform: translateY(10rem);
+        // opacity: 0;
+        z-index: 300;
+
+        & > ul {
+          display: none;
+        }
+      }
+
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #000000;
+        gap: 0.3rem;
+      }
+    }
+  }
+
+  //   ham_menus
+
+  .ham_menus {
+    font-size: 2rem;
+    @include flex(center, center);
+    gap: 2rem;
+    // arrow
+    .arrow {
+      span {
+        display: inline-block;
+        animation-name: Xanimation;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        transition: 0.6s;
+        &:hover {
+          color: $main-color;
+        }
+        // animation
+        @keyframes Xanimation {
+          0% {
+            transform: translateX(0.4rem);
+          }
+
+          50% {
+            transform: translate(-0.4rem);
+          }
+          100% {
+            transform: translateX(0.4rem);
+          }
+        }
+      }
+    }
+
+    // hamburger
+    .hamburger {
+      display: none;
+      @include media("<=laptop") {
+        display: block;
+      }
+    }
+  }
+}
